@@ -1,0 +1,6 @@
+# Python dependencies for my-ai-site scraper
+# Install with: pip install -r requirements.txt
+
+requests>=2.31.0
+pycryptodome>=3.19.0
+urllib3>=2.0.0
