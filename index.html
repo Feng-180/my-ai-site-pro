@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,7 +70,7 @@
             right: -10vw;
             animation-duration: 25s;
         }
-        
+
         .orb-3 {
             width: 30vw;
             height: 30vw;
@@ -82,8 +83,13 @@
         }
 
         @keyframes float {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(5%, 5%) scale(1.1); }
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(5%, 5%) scale(1.1);
+            }
         }
 
         /* Navigation */
@@ -178,7 +184,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         .text-accent {
             background: linear-gradient(135deg, #a78bfa 0%, #c084fc 100%);
             -webkit-background-clip: text;
@@ -218,7 +224,7 @@
             background: var(--accent);
             color: white;
             box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .btn-primary:hover {
@@ -325,7 +331,7 @@
             background: rgba(59, 130, 246, 0.1);
             border-color: rgba(59, 130, 246, 0.2);
         }
-        
+
         .card:hover:nth-child(2) {
             border-color: rgba(59, 130, 246, 0.4);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(59, 130, 246, 0.1);
@@ -336,7 +342,7 @@
             background: rgba(16, 185, 129, 0.1);
             border-color: rgba(16, 185, 129, 0.2);
         }
-        
+
         .card:hover:nth-child(3) {
             border-color: rgba(16, 185, 129, 0.4);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(16, 185, 129, 0.1);
@@ -347,7 +353,7 @@
             background: rgba(245, 158, 11, 0.1);
             border-color: rgba(245, 158, 11, 0.2);
         }
-        
+
         .card:hover:nth-child(4) {
             border-color: rgba(245, 158, 11, 0.4);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(245, 158, 11, 0.1);
@@ -376,18 +382,33 @@
             font-weight: 500;
             font-size: 0.95rem;
             padding: 12px 20px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
             transition: all 0.3s;
             margin-top: auto;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             justify-content: center;
         }
 
-        .card:nth-child(1) .card-link:hover { background: var(--accent); border-color: var(--accent); }
-        .card:nth-child(2) .card-link:hover { background: #3b82f6; border-color: #3b82f6; }
-        .card:nth-child(3) .card-link:hover { background: #10b981; border-color: #10b981; }
-        .card:nth-child(4) .card-link:hover { background: #f59e0b; border-color: #f59e0b; }
+        .card:nth-child(1) .card-link:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .card:nth-child(2) .card-link:hover {
+            background: #3b82f6;
+            border-color: #3b82f6;
+        }
+
+        .card:nth-child(3) .card-link:hover {
+            background: #10b981;
+            border-color: #10b981;
+        }
+
+        .card:nth-child(4) .card-link:hover {
+            background: #f59e0b;
+            border-color: #f59e0b;
+        }
 
         .card-link i {
             transition: transform 0.3s;
@@ -397,11 +418,125 @@
             transform: translateX(4px);
         }
 
+        /* Category Section */
+        .category-section {
+            margin-bottom: 60px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .category-header i {
+            font-size: 28px;
+            padding: 12px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .category-header h3 {
+            font-size: 1.8rem;
+            margin: 0;
+            background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .resource-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .resource-item {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .resource-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.3);
+            background: rgba(139, 92, 246, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .resource-info h4 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .resource-info p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 100px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tag.hot {
+            background: rgba(239, 68, 68, 0.1);
+            color: #fca5a5;
+            border-color: rgba(239, 68, 68, 0.2);
+        }
+
+        .tag.pro {
+            background: rgba(139, 92, 246, 0.1);
+            color: #c4b5fd;
+            border-color: rgba(139, 92, 246, 0.2);
+        }
+
+        .resource-action {
+            margin-top: auto;
+        }
+
+        .btn-sm {
+            padding: 10px 20px;
+            font-size: 14px;
+            width: 100%;
+            justify-content: center;
+        }
+
         /* Data Section */
         .stats-section {
             margin: 80px 0;
             padding: 60px 40px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(139,92,246,0.05) 100%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(139, 92, 246, 0.05) 100%);
             border-radius: 24px;
             border: 1px solid var(--card-border);
             display: flex;
@@ -438,20 +573,20 @@
             backdrop-filter: blur(10px);
             background: rgba(10, 10, 15, 0.8);
         }
-        
+
         .footer-links {
             margin-top: 20px;
             display: flex;
             justify-content: center;
             gap: 20px;
         }
-        
+
         .footer-links a {
             color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.3s;
         }
-        
+
         .footer-links a:hover {
             color: var(--text-primary);
         }
@@ -460,25 +595,41 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: var(--bg-color);
         }
+
         ::-webkit-scrollbar-thumb {
             background: rgba(255, 255, 255, 0.2);
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: rgba(255, 255, 255, 0.3);
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
-            .grid { grid-template-columns: 1fr; }
-            .stats-section { flex-direction: column; gap: 40px; }
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-section {
+                flex-direction: column;
+                gap: 40px;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Dynamic Background -->
@@ -521,68 +672,192 @@
     <!-- Main Content -->
     <main id="resources">
         <h2 class="section-title text-gradient">核心基建库</h2>
-        <div class="grid">
-            
-            <!-- Card 1: 机场/节点推广 (Affiliate) -->
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-satellite-dish"></i>
+
+        <!-- Category 1: Network -->
+        <div class="category-section">
+            <div class="category-header">
+                <i class="fa-solid fa-satellite-dish" style="color: #8b5cf6;"></i>
+                <h3>全球高速网络加速器 (IPLC 专线)</h3>
+            </div>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-info">
+                        <h4>WgetCloud (少数派)</h4>
+                        <p>BGP 企业级跨境专线，全节点晚高峰 8K 秒开，完美解锁 ChatGPT / Netflix 等流媒体限制，高净值用户首选。</p>
+                        <div class="tags">
+                            <span class="tag hot">稳定首选</span>
+                            <span class="tag">香港/日本专线</span>
+                        </div>
                     </div>
-                    <h3>全球高速节点网络</h3>
-                    <p>精选全网抗封锁、低延迟的 IPLC 专线服务。晚高峰不降速，完美解锁流媒体与 AI 应用环境，是你探索数字世界的基石。</p>
-                    <!-- 将 href="#" 替换为你的机场返利 Affiliate 链接 -->
-                    <a href="#" class="card-link" target="_blank">
-                        获取顶级云网络 <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+                    <div class="resource-action">
+                        <a href="https://wgetcloud.com/" target="_blank" class="btn btn-primary btn-sm">
+                            直达官网获取配置 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-info">
+                        <h4>大鳄云 (Crocodile)</h4>
+                        <p>主打高性价比与大流量，适合重度学术搜索、图文生成及长期挂机用户。支持一键导入多端客户端。</p>
+                        <div class="tags">
+                            <span class="tag">高性价比</span>
+                            <span class="tag">大流量包</span>
+                        </div>
+                    </div>
+                    <div class="resource-action">
+                        <!-- 将此处替换为实际推介链接 -->
+                        <a href="https://example.com" target="_blank" class="btn btn-secondary btn-sm">
+                            查看月付套餐 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Card 2: 虚拟卡推广 (Affiliate) -->
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-credit-card"></i>
+        <!-- Category 2: Payments -->
+        <div class="category-section">
+            <div class="category-header">
+                <i class="fa-solid fa-credit-card" style="color: #3b82f6;"></i>
+                <h3>海外支付与虚拟卡方案</h3>
+            </div>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-info">
+                        <h4>WildCard (野卡)</h4>
+                        <p>专为国内用户打造的海外支付利器。一分钟支付宝/微信开通美国虚拟信用卡，0 门槛订阅 ChatGPT Plus、Midjourney、Claude Pro 等。</p>
+                        <div class="tags">
+                            <span class="tag hot">小白必选</span>
+                            <span class="tag pro">免KYC</span>
+                        </div>
                     </div>
-                    <h3>海外数字支付方案</h3>
-                    <p>一分钟开通美国虚拟信用卡。无缝订阅 ChatGPT Plus, Midjourney, Claude Pro 及海外优质服务，支持国内常见支付方式充值。</p>
-                    <!-- 将 href="#" 替换为你的 WildCard / Dupay 推广链接 -->
-                    <a href="#" class="card-link" target="_blank">
-                        免费申请海外卡 <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+                    <div class="resource-action">
+                        <a href="https://bewildcard.com/" target="_blank" class="btn btn-primary btn-sm"
+                            style="background: #3b82f6; box-shadow: 0 0 20px rgba(59,130,246,0.3);">
+                            立即开通 (含专属优惠码) <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-info">
+                        <h4>Dupay (原 Depay)</h4>
+                        <p>支持 USDT 充值的数字货币虚拟卡，支持绑定 Apple Pay 及海外实体消费场景。适合有 Web3/Crypto 基础的高阶玩家。</p>
+                        <div class="tags">
+                            <span class="tag">支持加密货币</span>
+                            <span class="tag">Apple Pay</span>
+                        </div>
+                    </div>
+                    <div class="resource-action">
+                        <a href="https://www.dupay.one/" target="_blank" class="btn btn-secondary btn-sm">
+                            前往下载 App <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Card 3: 账号与资产 (直接销售) -->
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-fingerprint"></i>
+        <!-- Category 3: Accounts -->
+        <div class="category-section">
+            <div class="category-header">
+                <i class="fa-solid fa-fingerprint" style="color: #10b981;"></i>
+                <h3>全球稀缺数字账号仓</h3>
+            </div>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <div class="resource-info">
+                        <h4>ChatGPT & Claude 成品号</h4>
+                        <p>纯手工注册的稳定独享账号，附带注册所用地道邮箱。彻底告别批量封号风险，到手即用。</p>
+                        <div class="tags">
+                            <span class="tag pro">独享号</span>
+                            <span class="tag">包首登</span>
+                        </div>
                     </div>
-                    <h3>稀缺数字账号仓</h3>
-                    <p>提供稳定纯净的海外平台账号：苹果美区独享 ID, Google Voice 实名手机号, OpenAI API 高爆率号等数字资产直供。</p>
-                    <!-- 引导用户加你QQ私聊购买 -->
-                    <a href="https://qm.qq.com/q/QQ联系链接请替换这里" class="card-link" target="_blank">
-                        联系客服获取库存 <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+                    <div class="resource-action">
+                        <!-- 换成您的购买链接或QQ -->
+                        <a href="https://qm.qq.com/q/70人QQ群链接请替换这里" target="_blank" class="btn btn-primary btn-sm"
+                            style="background: #10b981; box-shadow: 0 0 20px rgba(16,185,129,0.3);">
+                            联系站长购买 <i class="fa-brands fa-qq"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-info">
+                        <h4>Apple ID (美区/日区/港区)</h4>
+                        <p>解锁海外 App Store 核心应用 (如 Shadowrocket, Spotify, Netflix)。全新干净账号，支持修改密保。</p>
+                        <div class="tags">
+                            <span class="tag">可改密码</span>
+                            <span class="tag">带小火箭</span>
+                        </div>
+                    </div>
+                    <div class="resource-action">
+                        <a href="https://qm.qq.com/q/70人QQ群链接请替换这里" target="_blank" class="btn btn-secondary btn-sm">
+                            查看库存与报价 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-info">
+                        <h4>Google Voice 实名号</h4>
+                        <p>无需实体 SIM 卡即可拥有美国本地 +1 手机号。用于高成功率注册各类海外匿名服务及验证码接收。</p>
+                        <div class="tags">
+                            <span class="tag">免月租</span>
+                            <span class="tag">无限码</span>
+                        </div>
+                    </div>
+                    <div class="resource-action">
+                        <a href="https://qm.qq.com/q/70人QQ群链接请替换这里" target="_blank" class="btn btn-secondary btn-sm">
+                            直接下单 <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Card 4: 付费社群 (知识付费升级) -->
-            <div class="card">
-                <div class="card-content">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-people-group"></i>
+        <!-- Category 4: Services -->
+        <div class="category-section" id="community">
+            <div class="category-header">
+                <i class="fa-solid fa-people-group" style="color: #f59e0b;"></i>
+                <h3>极客定制与私人社群</h3>
+            </div>
+            <div class="resource-list">
+                <div class="resource-item"
+                    style="border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.05);">
+                    <div class="resource-info">
+                        <h4>VIP Pro 核心交流群 (终身会员)</h4>
+                        <p>打破信息差！群内每日分享最新出海白嫖教程、高优节点福利、以及各项工具的防封控指南。入群即赠送一次 1v1 环境搭建咨询。</p>
+                        <div class="tags">
+                            <span class="tag"
+                                style="background: rgba(245,158,11,0.2); color: #fbbf24; border-color: rgba(245,158,11,0.4);">🔥
+                                顶级圈层</span>
+                        </div>
                     </div>
-                    <h3>Pro 极客先锋群</h3>
-                    <p>加入我们的核心圈子。获取一手出海资讯、限免福利、技术白嫖教程，并提供一对一环境搭建技术支持排查。</p>
-                    <!-- 引导用户加你QQ大群或赞赏进小群 -->
-                    <a href="https://qm.qq.com/q/QQ群链接请替换这里" class="card-link" target="_blank">
-                        了解入群门槛 <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+                    <div class="resource-action">
+                        <a href="https://qm.qq.com/q/请替换这里为您的高级群链接" target="_blank" class="btn btn-primary btn-sm"
+                            style="background: #f59e0b; box-shadow: 0 0 20px rgba(245,158,11,0.3);">
+                            付费加入圈子 <i class="fa-brands fa-qq"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="resource-item">
+                    <div class="resource-info">
+                        <h4>1v1 代充/代付/代搭服务</h4>
+                        <p>如果您不想折腾虚拟卡或网络配置，站长提供全程保姆级代办：包括 ChatGPT Plus 升级操作、OnlyFans 充值、专属节点排障等人工服务。</p>
+                        <div class="tags">
+                            <span class="tag">高效办理</span>
+                            <span class="tag">安全可靠</span>
+                        </div>
+                    </div>
+                    <div class="resource-action">
+                        <a href="https://qm.qq.com/q/请替换为您私聊链接" target="_blank" class="btn btn-secondary btn-sm">
+                            联系站长预约人工咨询 <i class="fa-solid fa-headset"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-
         </div>
 
         <div class="stats-section">
@@ -614,10 +889,10 @@
     <!-- Interactive Card Glow Script -->
     <script>
         document.getElementById("resources").onmousemove = e => {
-            for(const card of document.getElementsByClassName("card")) {
+            for (const card of document.getElementsByClassName("card")) {
                 const rect = card.getBoundingClientRect(),
-                      x = e.clientX - rect.left,
-                      y = e.clientY - rect.top;
+                    x = e.clientX - rect.left,
+                    y = e.clientY - rect.top;
 
                 card.style.setProperty("--mouse-x", `${x}px`);
                 card.style.setProperty("--mouse-y", `${y}px`);
@@ -625,4 +900,5 @@
         }
     </script>
 </body>
+
 </html>
